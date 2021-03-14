@@ -7,12 +7,12 @@ import com.cdejong.config.Config;
 import me.libraryaddict.disguise.DisguiseAPI;
 import org.bukkit.entity.Player;
 
-public class DisguisedAsPlaceHolder implements PlaceholderReplacer {
+public class DisguisedAsPlaceholder implements PlaceholderReplacer {
 
     private final LibsDisguisesMVdWHook plugin;
     private Config config;
 
-    public DisguisedAsPlaceHolder(LibsDisguisesMVdWHook plugin) {
+    public DisguisedAsPlaceholder(LibsDisguisesMVdWHook plugin) {
         this.plugin = plugin;
         this.config = plugin.getRunningConfig();
     }
@@ -22,7 +22,7 @@ public class DisguisedAsPlaceHolder implements PlaceholderReplacer {
 
         Player player = event.getPlayer();
 
-        if (plugin.isLibsDisguisesEnabled() || !DisguiseAPI.isDisguised(player)) {
+        if (!plugin.isLibsDisguisesEnabled() || !DisguiseAPI.isDisguised(player)) {
             return config.getNotDisguisedValue();
         } else {
             return DisguiseAPI.getDisguise(player).getDisguiseName();

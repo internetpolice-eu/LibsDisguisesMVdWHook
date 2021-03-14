@@ -3,8 +3,9 @@ package com.cdejong;
 import be.maximvdw.placeholderapi.PlaceholderAPI;
 import com.cdejong.config.Config;
 import com.cdejong.config.YamlConfig;
-import com.cdejong.placeholders.DisguisedAsPlaceHolder;
+import com.cdejong.placeholders.DisguisedAsPlaceholder;
 import com.cdejong.placeholders.IsDisguisedPlaceholder;
+import com.cdejong.placeholders.IsDisguisedRawPlaceholder;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -29,8 +30,9 @@ public final class LibsDisguisesMVdWHook extends JavaPlugin {
             this.isLibsDisguisesEnabled = false;
         }
 
-        PlaceholderAPI.registerPlaceholder(this, "libsdisguises_disguised_as", new DisguisedAsPlaceHolder(this));
+        PlaceholderAPI.registerPlaceholder(this, "libsdisguises_disguised_as", new DisguisedAsPlaceholder(this));
         PlaceholderAPI.registerPlaceholder(this, "libsdisguises_is_disguised", new IsDisguisedPlaceholder(this));
+        PlaceholderAPI.registerPlaceholder(this, "libsdisguises_is_disguised_raw", new IsDisguisedRawPlaceholder(this));
     }
 
     public boolean isLibsDisguisesEnabled() {

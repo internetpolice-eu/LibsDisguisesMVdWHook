@@ -14,7 +14,7 @@ public class YamlConfig implements Config {
 
     public YamlConfig(LibsDisguisesMVdWHook plugin) {
         this.plugin = plugin;
-        this.file = new File("config.yml");
+        this.file = new File(plugin.getDataFolder(), "config.yml");
 
         loadConfig();
     }
