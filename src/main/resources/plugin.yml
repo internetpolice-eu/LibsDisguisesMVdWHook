@@ -1,0 +1,7 @@
+name: LibsDisguisesMVdWHook
+version: ${project.version}
+main: com.cdejong.LibsDisguisesMVdWHook
+api-version: 1.16
+softdepend:
+  - MVdWPlaceholderAPI
+  - LibsDisguises
