@@ -17,6 +17,9 @@
     </properties>
 
     <build>
+        <defaultGoal>clean package</defaultGoal>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+        <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -48,6 +51,9 @@
             <resource>
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
+                <includes>
+                    <include>*.yml</include>
+                </includes>
             </resource>
         </resources>
     </build>
@@ -64,7 +70,7 @@
         <repository>
             <id>mvdw-software</id>
             <name>MVdW Public Repositories</name>
-            <url>http://repo.mvdw-software.be/content/groups/public/</url>
+            <url>https://repo.mvdw-software.be/content/groups/public/</url>
         </repository>
         <repository>
             <id>md_5-public</id>
@@ -84,6 +90,7 @@
             <groupId>be.maximvdw</groupId>
             <artifactId>MVdWPlaceholderAPI</artifactId>
             <version>3.1.1-SNAPSHOT</version>
+            <scope>provided</scope>
             <!-- MVdWPlaceholderAPI includes a lot of unpublished dependencies, like Spigot 1.9 -->
             <exclusions>
                 <exclusion>
